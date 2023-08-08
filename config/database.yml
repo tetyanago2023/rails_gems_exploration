@@ -1,0 +1,16 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: pretender_dev
+
+test:
+  <<: *default
+  database: pretender_test
+
+production:
+  <<: *default
+  database: pretender_prod
